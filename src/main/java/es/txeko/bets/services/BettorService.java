@@ -58,15 +58,11 @@ public class BettorService {
 
 			LOGGER.error("Cannot update bettor without id");
 			throw new BettorException("Cannot update bettor without id");
+			
 		}
-
+		
+		
 		Bettor dbBettor = getBettor(bettor.getId());
-
-		if (dbBettor == null) {
-
-			throw new BettorException("Bettor with id " + bettor.getId() + " not found in database!!");
-
-		}
 		
 		dbBettor.setName(bettor.getName());
 
